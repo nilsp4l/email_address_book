@@ -18,6 +18,9 @@ query::execute_search_query(const QString &firstname, const QString &surname,
 bool query::execute_insertion_query(const QString &firstname,
                                     const QString &surname,
                                     const QString &mail) {
+  if (firstname.contains(" ") || surname.contains(" ") || mail.contains(" ")) {
+    return false;
+  }
   update_last_query(firstname, surname, mail);
 
   return db.insert_into_db(firstname, surname, mail);
