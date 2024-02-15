@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QStandardItemModel>
 
-#include "database.h"
+#include "query.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -37,6 +37,6 @@ class book_window : public QMainWindow {
   void init_model();
   Ui::book_window *ui;
   QStandardItemModel *model;
-  database db;
+  query query;
 };
 #endif  // BOOK_WINDOW_H
